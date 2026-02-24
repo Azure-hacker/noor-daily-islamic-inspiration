@@ -6,10 +6,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:mobile": "cross-env BUILD_TARGET=capacitor vite build && npx cap sync",
+    "cap:android": "cross-env BUILD_TARGET=capacitor vite build && npx cap sync android && npx cap open android",
+    "cap:ios": "cross-env BUILD_TARGET=capacitor vite build && npx cap sync ios && npx cap open ios",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@capacitor/android": "^8.1.0",
+    "@capacitor/cli": "^8.1.0",
+    "@capacitor/core": "^8.1.0",
+    "@capacitor/ios": "^8.1.0",
     "@fluentui/react-components": "^9.73.0",
     "@fluentui/react-icons": "^2.0.319",
     "react": "^19.2.0",
@@ -22,6 +29,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "cross-env": "^10.1.0",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",

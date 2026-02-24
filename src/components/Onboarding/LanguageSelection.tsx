@@ -17,10 +17,10 @@ const useStyles = makeStyles({
     alignItems: 'center',
     minHeight: '100vh',
     padding: '48px 24px',
-    background: '#faf9f7',
+    background: '#f5f8fc',
   },
   title: {
-    color: '#0f4c3a',
+    color: '#1a4971',
     marginBottom: '8px',
     fontWeight: 700,
   },
@@ -44,7 +44,7 @@ const useStyles = makeStyles({
     padding: '16px',
     transition: 'all 0.2s ease',
     ':hover': {
-      borderColor: '#d4af37',
+      borderColor: '#c9953e',
       boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
     },
   },
@@ -52,11 +52,11 @@ const useStyles = makeStyles({
     cursor: 'pointer',
     borderWidth: '2px',
     borderStyle: 'solid',
-    borderColor: '#d4af37' as unknown as undefined,
+    borderColor: '#c9953e' as unknown as undefined,
     borderRadius: '12px',
     padding: '16px',
-    backgroundColor: 'rgba(212, 175, 55, 0.05)',
-    boxShadow: '0 2px 12px rgba(212, 175, 55, 0.2)',
+    backgroundColor: 'rgba(201, 149, 62, 0.05)',
+    boxShadow: '0 2px 12px rgba(201, 149, 62, 0.2)',
   },
   cardIcon: {
     fontSize: '28px',
@@ -66,7 +66,7 @@ const useStyles = makeStyles({
   },
   cardTitle: {
     fontWeight: 600,
-    color: '#0f4c3a',
+    color: '#1a4971',
   },
   actions: {
     display: 'flex',
@@ -80,14 +80,14 @@ const useStyles = makeStyles({
     color: '#666',
   },
   nextButton: {
-    backgroundColor: '#0f4c3a',
+    backgroundColor: '#1a4971',
     color: '#ffffff',
     fontWeight: 600,
     borderRadius: '24px',
     padding: '10px 36px',
     border: 'none',
     ':hover': {
-      backgroundColor: '#1a6b4f',
+      backgroundColor: '#2d6da4',
     },
   },
   stepIndicator: {
@@ -99,13 +99,13 @@ const useStyles = makeStyles({
     width: '8px',
     height: '8px',
     borderRadius: '50%',
-    backgroundColor: '#ddd',
+    backgroundColor: '#c9953e',
   },
   dotActive: {
     width: '8px',
     height: '8px',
     borderRadius: '50%',
-    backgroundColor: '#d4af37',
+    backgroundColor: '#c9953e',
   },
 });
 
@@ -132,12 +132,17 @@ export const LanguageSelection: React.FC<LanguageSelectionProps> = ({
 }) => {
   const classes = useStyles();
 
+  const handleSelect = (langId: Language) => {
+    onSelect(langId);
+    setTimeout(() => onFinish(), 350);
+  };
+
   return (
     <div className={classes.container} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <div className={classes.stepIndicator}>
         <div className={classes.dotActive} />
-        <div className={classes.dotActive} />
-        <div className={classes.dotActive} />
+        <div className={classes.dot} />
+        <div className={classes.dot} />
       </div>
       <Title2 className={classes.title}>{t('language', language)}</Title2>
       <Body1 className={classes.description}>
@@ -149,14 +154,14 @@ export const LanguageSelection: React.FC<LanguageSelectionProps> = ({
           <Card
             key={option.id}
             className={selectedLanguage === option.id ? classes.cardSelected : classes.card}
-            onClick={() => onSelect(option.id)}
+            onClick={() => handleSelect(option.id)}
             role="radio"
             aria-checked={selectedLanguage === option.id}
             tabIndex={0}
             onKeyDown={e => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                onSelect(option.id);
+                handleSelect(option.id);
               }
             }}
           >
@@ -173,7 +178,7 @@ export const LanguageSelection: React.FC<LanguageSelectionProps> = ({
           {t('back', language)}
         </Button>
         <Button className={classes.nextButton} onClick={onFinish}>
-          {t('getStarted', language)}
+          {t('next', language)}
         </Button>
       </div>
     </div>

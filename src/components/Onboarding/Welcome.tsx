@@ -18,11 +18,11 @@ const useStyles = makeStyles({
     minHeight: '100vh',
     padding: '40px 24px',
     textAlign: 'center',
-    background: `linear-gradient(180deg, #0f4c3a 0%, #1a6b4f 50%, #0f4c3a 100%)`,
+    background: `linear-gradient(180deg, #1a4971 0%, #2d6da4 50%, #1a4971 100%)`,
   },
   bismillah: {
     fontSize: '28px',
-    color: '#d4af37',
+    color: '#c9953e',
     fontFamily: '"Amiri", "Traditional Arabic", serif',
     marginBottom: '32px',
     direction: 'rtl' as const,
@@ -38,7 +38,7 @@ const useStyles = makeStyles({
     marginBottom: '8px',
   },
   appName: {
-    color: '#d4af37',
+    color: '#c9953e',
     fontSize: '20px',
     fontWeight: 600,
     letterSpacing: '3px',
@@ -53,8 +53,8 @@ const useStyles = makeStyles({
     marginBottom: '48px',
   },
   button: {
-    backgroundColor: '#d4af37',
-    color: '#0f4c3a',
+    backgroundColor: '#c9953e',
+    color: '#ffffff',
     fontWeight: 600,
     fontSize: '16px',
     padding: '12px 48px',
@@ -62,11 +62,11 @@ const useStyles = makeStyles({
     border: 'none',
     minHeight: '48px',
     ':hover': {
-      backgroundColor: '#c4a030',
+      backgroundColor: '#b8862f',
     },
   },
   ornament: {
-    color: '#d4af37',
+    color: '#c9953e',
     fontSize: '24px',
     marginTop: '48px',
     opacity: 0.6,

@@ -31,31 +31,31 @@ export const OnboardingFlow: React.FC<OnboardingFlowProps> = ({
       return <Welcome language={language} onStart={() => setStep(1)} />;
     case 1:
       return (
-        <PillarSelection
+        <LanguageSelection
           language={language}
-          selectedPillar={pillar}
-          onSelect={onSetPillar}
-          onNext={() => setStep(2)}
+          selectedLanguage={language}
+          onSelect={onSetLanguage}
+          onFinish={() => setStep(2)}
           onBack={() => setStep(0)}
         />
       );
     case 2:
       return (
-        <CadenceSelection
+        <PillarSelection
           language={language}
-          selectedCadence={cadence}
-          onSelect={onSetCadence}
+          selectedPillar={pillar}
+          onSelect={onSetPillar}
           onNext={() => setStep(3)}
           onBack={() => setStep(1)}
         />
       );
     case 3:
       return (
-        <LanguageSelection
+        <CadenceSelection
           language={language}
-          selectedLanguage={language}
-          onSelect={onSetLanguage}
-          onFinish={onComplete}
+          selectedCadence={cadence}
+          onSelect={onSetCadence}
+          onNext={onComplete}
           onBack={() => setStep(2)}
         />
       );

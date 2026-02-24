@@ -16,10 +16,10 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
-    background: '#faf9f7',
+    background: '#f5f8fc',
   },
   header: {
-    background: 'linear-gradient(135deg, #0f4c3a 0%, #1a6b4f 100%)',
+    background: 'linear-gradient(135deg, #1a4971 0%, #2d6da4 100%)',
     padding: '24px',
     color: '#ffffff',
     display: 'flex',
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     minWidth: 'auto',
     fontSize: '18px',
     ':hover': {
-      color: '#d4af37',
+      color: '#c9953e',
     },
   },
   headerTitle: {
@@ -48,7 +48,7 @@ const useStyles = makeStyles({
     fontWeight: 600,
     textTransform: 'uppercase' as const,
     letterSpacing: '1.5px',
-    color: '#d4af37',
+    color: '#c9953e',
     marginBottom: '12px',
     marginTop: '24px',
   },
@@ -64,17 +64,17 @@ const useStyles = makeStyles({
     padding: '12px',
     transition: 'all 0.2s ease',
     ':hover': {
-      borderColor: '#d4af37',
+      borderColor: '#c9953e',
     },
   },
   cardSelected: {
     cursor: 'pointer',
     borderWidth: '2px',
     borderStyle: 'solid',
-    borderColor: '#d4af37' as unknown as undefined,
+    borderColor: '#c9953e' as unknown as undefined,
     borderRadius: '12px',
     padding: '12px',
-    backgroundColor: 'rgba(212, 175, 55, 0.05)',
+    backgroundColor: 'rgba(201, 149, 62, 0.05)',
   },
   cardIcon: {
     fontSize: '24px',
@@ -84,7 +84,7 @@ const useStyles = makeStyles({
   },
   cardTitle: {
     fontWeight: 600,
-    color: '#0f4c3a',
+    color: '#1a4971',
     fontSize: '14px',
   },
   cardDesc: {
@@ -93,7 +93,7 @@ const useStyles = makeStyles({
     marginTop: '2px',
   },
   saveButton: {
-    backgroundColor: '#0f4c3a',
+    backgroundColor: '#1a4971',
     color: '#ffffff',
     fontWeight: 600,
     borderRadius: '24px',
@@ -104,7 +104,7 @@ const useStyles = makeStyles({
     margin: '24px auto',
     display: 'block',
     ':hover': {
-      backgroundColor: '#1a6b4f',
+      backgroundColor: '#2d6da4',
     },
   },
   resetButton: {
@@ -115,7 +115,7 @@ const useStyles = makeStyles({
   },
   savedMessage: {
     textAlign: 'center',
-    color: '#0f4c3a',
+    color: '#1a4971',
     fontWeight: 600,
     marginTop: '16px',
   },
